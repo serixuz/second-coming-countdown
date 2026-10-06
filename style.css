@@ -1,0 +1,383 @@
+/* Design tokens */
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+:root {
+  color-scheme: dark;
+  --color-background: #0c0d10;
+  --color-surface: #17181e;
+  --color-surface-raised: #25262e;
+  --color-text: #eeedf0;
+  --color-text-muted: #a5a4ae;
+  --color-primary: #c6c8d1;
+  --color-primary-hover: #f1f2f5;
+  --color-accent: #b6a6c8;
+  --color-border: #555661;
+  --color-silver: #c6c8d1;
+  --color-silver-dark: #686b78;
+  --color-incense: #b6a6c8;
+  --color-wine: #793e50;
+  --color-success: #a3b6a0;
+  --color-warning: #c5b48c;
+  --color-danger: #d2929b;
+
+  --font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Segoe UI Mono', monospace;
+  --font-serif: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+  --font-display: 'UnifrakturMaguntia', 'Palatino Linotype', Georgia, serif;
+  --leading-body: 1.6;
+  --leading-heading: 1.05;
+
+  /* Utopia: 320–1200px viewport, 16–20px base, 1.2–1.25 type scale.
+     https://utopia.fyi/type/calculator/?c=320,16,1.2,1200,20,1.25,9,2 */
+  --step--2: clamp(0.6944rem, 0.6561rem + 0.1919vw, 0.8rem);
+  --step--1: clamp(0.8333rem, 0.7727rem + 0.303vw, 1rem);
+  --step-0: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem);
+  --step-1: clamp(1.2rem, 1.0682rem + 0.6591vw, 1.5625rem);
+  --step-2: clamp(1.44rem, 1.2534rem + 0.933vw, 1.9531rem);
+  --step-3: clamp(1.728rem, 1.4686rem + 1.2971vw, 2.4414rem);
+  --step-4: clamp(2.0736rem, 1.7179rem + 1.7785vw, 3.0518rem);
+  --step-5: clamp(2.4883rem, 2.006rem + 2.4116vw, 3.8147rem);
+  --step-6: clamp(2.986rem, 2.3378rem + 3.2407vw, 4.7684rem);
+  --step-7: clamp(3.5832rem, 2.7187rem + 4.3223vw, 5.9605rem);
+  --step-8: clamp(4.2998rem, 3.1541rem + 5.7287vw, 7.4506rem);
+  --step-9: clamp(5.1598rem, 3.6494rem + 7.5517vw, 9.3132rem);
+
+  /* Fluid spacing, using the same viewport and base sizes. */
+  --space-3xs: clamp(0.25rem, 0.2273rem + 0.1136vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4545rem + 0.2273vw, 0.625rem);
+  --space-xs: clamp(0.75rem, 0.6818rem + 0.3409vw, 0.9375rem);
+  --space-s: clamp(1rem, 0.9091rem + 0.4545vw, 1.25rem);
+  --space-m: clamp(1.5rem, 1.3636rem + 0.6818vw, 1.875rem);
+  --space-l: clamp(2rem, 1.8182rem + 0.9091vw, 2.5rem);
+  --space-xl: clamp(3rem, 2.7273rem + 1.3636vw, 3.75rem);
+  --space-2xl: clamp(4rem, 3.6364rem + 1.8182vw, 5rem);
+  --space-3xl: clamp(6rem, 5.4545rem + 2.7273vw, 7.5rem);
+  --space-s-m: clamp(1rem, 0.6818rem + 1.5909vw, 1.875rem);
+  --space-m-l: clamp(1.5rem, 1.1364rem + 1.8182vw, 2.5rem);
+  --space-l-xl: clamp(2rem, 1.3636rem + 3.1818vw, 3.75rem);
+  --space-s-l: clamp(1rem, 0.4545rem + 2.7273vw, 2.5rem);
+
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --shadow-card: 6px 6px 0 var(--color-border);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+textarea {
+  resize: vertical;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: var(--leading-heading);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--color-primary);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Page foundation */
+body {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  padding: var(--space-l-xl);
+  text-align: center;
+  background-image: radial-gradient(
+    ellipse at center,
+    #25232d 0,
+    transparent 65%
+  );
+}
+
+/* Decorative eight-point Orthodox cross, drawn in silver SVG. */
+body::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background: url('orthodox-cross.svg') no-repeat center;
+  background-size: contain;
+  margin: var(--space-l);
+  opacity: 0.26;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: var(--space-xs);
+  border: 1px solid var(--color-border);
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+/* STYLE */
+.alert-box {
+  font-family: var(--font-serif);
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  font-size: var(--step-2);
+  min-height: 100svh;
+  padding: var(--space-l-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+  animation: reveal-box 1.8s ease both;
+}
+
+.alert-box[hidden] {
+  display: none;
+}
+
+.alert-box .container {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 60rem);
+}
+
+.alert-cross {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: min(75vw, 30rem);
+  height: 85svh;
+  object-fit: contain;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.truth {
+  display: grid;
+  gap: var(--space-m);
+}
+
+.truth-line {
+  display: block;
+  animation: reveal-line 2s ease both;
+  animation-delay: 1.2s;
+}
+
+.truth-line:nth-child(2) {
+  animation-delay: 3.4s;
+}
+.truth-line:nth-child(3) {
+  animation-delay: 5.6s;
+}
+.truth-line:nth-child(4) {
+  animation-delay: 7.8s;
+}
+
+@keyframes reveal-box {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-line {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.primary {
+  color: var(--color-text);
+  font-size: var(--step-6);
+  padding-top: var(--space-s);
+  text-shadow: 0 2px 0 var(--color-background);
+  align-self: flex-end;
+}
+
+@media (max-width: 40rem) {
+  body::before {
+    background-position: center;
+    background-size: min(90vw, 28rem) auto;
+    opacity: 0.18;
+  }
+}
+
+.timer {
+  display: flex;
+  align-items: end;
+  gap: var(--space-3xs);
+  font-family: 'Unbounded', var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-size: var(--step-5);
+  align-self: start;
+}
+
+.timer-unit {
+  display: grid;
+  justify-items: center;
+}
+
+.timer-label {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+}
+
+.timer-action {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-s);
+  padding-bottom: var(--space-m);
+}
+
+.timer-invitation {
+  max-width: 38ch;
+  font-family: var(--font-serif);
+  font-size: var(--step-0);
+  color: var(--color-text-muted);
+}
+
+.skip-timer {
+  font-family: var(--font-mono);
+  font-size: var(--step-0);
+  font-weight: 700;
+  min-height: 3.5rem;
+  max-width: 100%;
+  padding: var(--space-s) var(--space-m);
+  background: var(--color-silver);
+  border: 2px solid var(--color-primary-hover);
+  color: var(--color-background);
+  box-shadow: 5px 5px 0 var(--color-silver-dark);
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.skip-timer:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 5px 7px 0 var(--color-silver-dark);
+}
+
+.skip-timer:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--color-border);
+}

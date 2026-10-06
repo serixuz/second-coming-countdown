@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500&amp;family=UnifrakturMaguntia&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="alert-box" hidden role="status" aria-live="polite">
+      <img
+        class="alert-cross"
+        src="orthodox-cross.svg"
+        alt=""
+        aria-hidden="true"
+      />
+      <div class="container">
+        <p class="truth">
+          <span class="truth-line"
+            >Time has run out — but no clock can reveal the hour.</span
+          >
+          <span class="truth-line">No one knows the day or the hour.</span>
+          <span class="truth-line"
+            >Until then, stay awake, live faithfully, and wait in hope.</span
+          >
+          <span class="truth-line"
+            >He will come when no countdown can predict it.</span
+          >
+        </p>
+      </div>
+    </div>
+    <h1 class="primary">Second Coming Countdown</h1>
+    <div class="timer">
+      <div class="timer-unit">
+        <span class="timer-label">year</span>
+        <p class="y" data-value="y">9999??</p>
+      </div>
+      <span>:</span>
+      <div class="timer-unit">
+        <span class="timer-label">hour</span>
+        <p class="h" data-value="h">999</p>
+      </div>
+      <span>:</span>
+      <div class="timer-unit">
+        <span class="timer-label">minute</span>
+        <p class="m" data-value="m">60</p>
+      </div>
+      <span>:</span>
+      <div class="timer-unit">
+        <span class="timer-label">second</span>
+        <p class="s" data-value="s">60</p>
+      </div>
+    </div>
+    <div class="timer-action">
+      <p class="timer-invitation" id="skip-hint">
+        You don't have to wait. See what lies beyond the countdown. ;)
+      </p>
+      <button class="skip-timer" type="button" aria-describedby="skip-hint">
+        Skip timer &amp; reveal the message
+      </button>
+    </div>
+  </body>
+</html>

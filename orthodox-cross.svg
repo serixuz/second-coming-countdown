@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 760" fill="none">
+  <defs>
+    <linearGradient id="silver" x1="80" y1="0" x2="370" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#686b78"/>
+      <stop offset=".24" stop-color="#edf0f6"/>
+      <stop offset=".48" stop-color="#9296a3"/>
+      <stop offset=".7" stop-color="#d5d7df"/>
+      <stop offset="1" stop-color="#555866"/>
+    </linearGradient>
+  </defs>
+  <!-- Short title beam, main beam, and inclined footrest. -->
+  <path d="M201 46 220 18 239 46V714L220 742 201 714Z" fill="url(#silver)" stroke="#e0e2e9" stroke-width="2"/>
+  <path d="M132 121 112 139 132 157H308L328 139 308 121Z" fill="url(#silver)" stroke="#e0e2e9" stroke-width="2"/>
+  <path d="M51 236 22 260 51 284H389L418 260 389 236Z" fill="url(#silver)" stroke="#e0e2e9" stroke-width="2"/>
+  <path d="m124 493-19 31 211 97 19-31Z" fill="url(#silver)" stroke="#e0e2e9" stroke-width="2"/>
+  <!-- Restrained engraved details and pointed Gothic terminals. -->
+  <path d="M220 49V714M139 139H301M56 260H384M126 516l188 86" stroke="#252630" stroke-width="3"/>
+  <path d="m220 62 9 14-9 14-9-14Zm0 615 9 14-9 14-9-14ZM60 260l13-8 13 8-13 8Zm294 0 13-8 13 8-13 8Z" fill="#f1f2f5"/>
+  <circle cx="220" cy="260" r="15" fill="#22232b" stroke="#d5d7df" stroke-width="2"/>
+  <path d="M220 250v20m-10-10h20" stroke="#d5d7df" stroke-width="2"/>
+</svg>
